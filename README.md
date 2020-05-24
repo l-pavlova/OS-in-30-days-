@@ -264,3 +264,4 @@ XZ Utils
 - unxz / xzcat / xz -d
 - compression format of choice
 Tasks
+https://github.com/l-pavlova/OS-in-30-days-/blob/master/tasks2.md
