@@ -152,4 +152,115 @@ permissions
 - ```mv``` moves from source to dest
 - ```rm``` 
 - ```touch``` - mtime/atime
+
+**Filesystem hard links**
+- a directory entry that references the same inode as another
+directory entry
+- can’t span filesystems
+- can’t create hard links to non-existent file
+- can’t reference directories
+- do not occupy storage space (i.e. blocks)
+- ```ln [option]...``` target link_name
+- ```ls -i```- -inode print the index number of each file
+
+**Filesystem symbolic links**
+- a file that references another file via path and name
+- can reference directories
+- can span filesystems
+- can reference non-existent files
+- ```ln -s ``` target link_name
+- occupy space
+- symlink / soft link
+```df, du, stat```
+- ```df``` Report disk space usage per filesystem
+- ```-h``` human readable output
+- ```-i``` list inode information instead of block usage
+- ```-T``` include filesystem type
+- ```--si``` use powers of 1000 instead of 1024
+- ``` -P``` use the POSIX output format
+- ``` du``` Report disk usage per file and directory
+- ``` -h``` human readable sizes
+- ``` -s``` summarize, only display total for each argument
+- ``` -x``` do not include files on a different filesystem
+- ``` --si ```use powers of 1000 instead of 1024
+- ``` stat dir1```display file or file system status
+- ``` -L``` follow links
+- ``` -c``` --format
+**File extensions and content**
+- file extensions are just part of the file name
+- some applications may care about extensions
+- ```file``` - reports the type of file by examining the file contents
+- /usr/share/file/magic.mgc
+
+**Displaying text files**
+- ``` cat ```- concatenate files and print on the standard output
+- ``` more ```
+- ``` less ```
+- ``` head ``` show top ten from file
+- ``` tail ```show last ten from file
+- ``` tail -f```
+- ``` -n```
+
+**Displaying binary files**
+- displaying raw binary data may corrupt the display terminal
+- ```strings``` - displays ASCII text inside binary files
+- ```xxd``` - displays HEX and ASCII dump of file, important for file proscessing in c too
+- clear
+**```xargs```**
+
+- build and execute command lines from standard input
+- ```xargs [options] [command [initial-arguments]]```
+- reads items from the standard input
+- delimited by blanks or newlines
+- executes the command (/bin/echo)
+- one or more times
+- with any initial-arguments
+- followed by items read from standard input
+- -0, --null
+- -I
+- -n
+
+**Searching the filesystem**
+- machine-readable
+- ```find [options] [starting-point] [expression]```
+- global/positional options
+- tests
+- operators
+- -o, -a (default)
+- actions
+- ```-print vs -print0 vs -printf``` is for displaying files per the contents of the mailcap file,
+- -ls list directory constents 
+- ```-exec```  The  exec()  family of functions replaces the current process image with a new process  image.
+- ```find /foo -name bar -print```
+**Archiving & compressing** 
+- archiving
+- tar
+- cpio
+- compressing
+- compress
+- gzip
+- bzip2
+- lzma
+- xz
+
+**Archives with tar**
+- tar
+- manipulates .tar files (tarballs)
+- used for backup and transfer of files
+- creates, extracts or lists the contents of tarballs
+- c, x, t, f, v
+- traditional vs. UNIX-style vs. GNU-style usage
+- tar cvf foo.tar ./foo/*
+- GNU tar supports built-in compression methods
+- -a, --auto-compress
+- -J, --xz
+- .tar (tarball)
+- records file and directory structure
+- includes metadata about the file: date, timestamps,
+ownership, permissions, etc.
+XZ Utils
+- xz
+- .xz
+- unxz / xzcat / xz -d
+- compression format of choice
 Tasks
