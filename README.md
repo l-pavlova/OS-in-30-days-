@@ -88,28 +88,28 @@ whoami
 
 -  absolute vs. relative addressing
 -  changing and displaying directories (cd, pwd)
-- cd by itself or cd ~ will always put you in your home directory.
-- cd . will leave you in the same directory you are currently in (i.e. your current directory won't change). 
-- cd ~username will put you in username's home directory.
-- cd dir (without a /) will put you in a subdirectory; for example, if you are in /usr, typing cd bin will put you in /usr/bin, while cd /bin puts you in /bin.
-- cd .. will move you up one directory. So, if you are /usr/bin/tmp, cd .. moves you to /usr/bin, while cd ../.. moves you to /usr (i.e. up two levels).
-- cd - will switch you to the previous directory. For example, if you are in /usr/bin/tmp, and go to /etc, you can type cd - to go back to /usr/bin/tmp. You can use this to toggle back and forth between two directories.
+- ```cd``` by itself or cd ~ will always put you in your home directory.
+- ```cd``` . will leave you in the same directory you are currently in (i.e. your current directory won't change). 
+- ```cd ~username``` will put you in username's home directory.
+- ```cd dir``` (without a /) will put you in a subdirectory; for example, if you are in /usr, typing cd bin will put you in /usr/bin, while cd /bin puts you in /bin.
+- ```cd ..``` will move you up one directory. So, if you are /usr/bin/tmp, cd .. moves you to /usr/bin, while cd ../.. moves you to /usr (i.e. up two levels).
+- ```cd -``` will switch you to the previous directory. For example, if you are in /usr/bin/tmp, and go to /etc, you can type cd - to go back to /usr/bin/tmp. You can use this to toggle back and forth between two directories.
 
 **Displaying directory contents**
 - human-readable
 - ls
-- ls -a - show all files (including .hidden files)
-- ls -l - long listings
-- ls -d - show directories, not contents
-- touch foo -command used to update the access date and/or modification date of a computer file or directory. 
-- mkdir bar
+- ```ls -a``` - show all files (including .hidden files)
+- ```ls -l``` - long listings
+- ```ls -d``` - show directories, not contents
+- ```touch foo``` -command used to update the access date and/or modification date of a computer file or directory. 
+- ```mkdir bar```
 **File {group,}ownership**
 - each file is owned by a specific UID and GID
 - chown - change the user (UID) ownership
 - only root can change ownership to another user
-- chown foo:bar
-- chgrp - modify just the group (GID) ownership
-- chown :bar
+- ```chown foo:bar```
+- ```chgrp``` - modify just the group (GID) ownership
+- ```chown :bar```
 - newly created files will usually be given GID ownership based
 on the current active group of the person who creates the file
 **File permissions**
