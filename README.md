@@ -207,10 +207,8 @@ directory entry
 - ```xxd``` - displays HEX and ASCII dump of file, important for file proscessing in c too
 - clear
 **```xargs```**
-
-- build and execute command lines from standard input
+By default xargs reads items from standard input as separated by blanks and executes a command once for each argument. 
 - ```xargs [options] [command [initial-arguments]]```
-- reads items from the standard input
 - delimited by blanks or newlines
 - executes the command (/bin/echo)
 - one or more times
@@ -219,6 +217,23 @@ directory entry
 - -0, --null
 - -I
 - -n
+examples:
+In the following example standard input is piped to xargs and the mkdir command is run for each argument, creating three folders.
+```
+echo 'one two three' | xargs mkdir
+ls
+one two three
+```
+In the following example files older than two weeks in the temp folder are found and then piped to the xargs command which runs the rm command on each file and removes them.
+
+```find /tmp -mtime +14 | xargs rm```
+**xargs v exec**
+
+The find command supports the -exec option that allows arbitrary commands to be performed on found files. The following are equivalent.
+```
+find ./foo -type f -name "*.txt" -exec rm {} \; 
+find ./foo -type f -name "*.txt" | xargs rm
+```
 
 **Searching the filesystem**
 - machine-readable
