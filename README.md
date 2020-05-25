@@ -330,6 +330,14 @@ summary:
 
 - ```cut``` - extracts sections from each line of files
 
+               -c - characters
+               
+               -f - fields
+               
+               -d - delimiter (TAB)
+               
+ most useful on structured input (text with columns), cannot change order (𝑁 ≤ 𝑀)
+
 - ```grep``` searches for patterns within files
 
          -n shows line numbers
@@ -508,10 +516,3 @@ Basic vi
 - :wq safe and quit
 - :wq!
 
-               -c - characters
-               
-               -f - fields
-               
-               -d - delimiter (TAB)
-               
- most useful on structured input (text with columns), cannot change order (𝑁 ≤ 𝑀)
