@@ -98,6 +98,22 @@ summary:
 - regex pattern matching (like grep)
 - math operations, control statements, variables,IO
 
+
+```BEGIN {awk-commands}```
+
+The BEGIN block gets executed at program start-up. It executes only once. This is good place to initialize variables. BEGIN is an AWK keyword and hence it must be in upper-case. Please note that this block is optional.
+
+Body Block
+
+The syntax of the body block is as follows −
+
+```/pattern/ {awk-commands}```
+The body block applies AWK commands on every input line. By default, AWK executes commands on every line. We can restrict this by providing patterns. Note that there are no keywords for the Body block.
+
+END Block
+
+```END {awk-commands}```
+The END block executes at the end of the program. END is an AWK keyword and hence it must be in upper-case. Please note that this block is optional.
 examples:
 
     -  awk '{ print $1 }' 
@@ -105,7 +121,7 @@ examples:
     -  awk '$1 != 1 { print $2 }'
     -  awk '{ sum += $1 } END { print sum }'
     -  awk -v "foo=${BAR}" '....'
-   
+more in https://github.com/l-pavlova/OS-in-30-days-/blob/master/AWKInDepth.md
 **Text sorting**
 - ```sort``` sorts text, can sort on different columns
 
