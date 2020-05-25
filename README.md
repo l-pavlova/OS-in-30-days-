@@ -35,15 +35,15 @@ whoami
 
 **Switching user**
 
-- su – change user ID (or become superuser)
+- ```su``` – change user ID (or become superuser)
 
-- su -, su -l, su --login – provide environment
+-``` su -, su -l, su --login``` – provide environment
 
-- sudo – execute a command as another user
+- ```sudo``` – execute a command as another user
 
 **Help**
 ```
- foo --help, foo -h
+foo --help, foo -h
 ```
 ```
  man [section] foo
@@ -232,6 +232,7 @@ directory entry
 - -ls list directory constents 
 - ```-exec```  The  exec()  family of functions replaces the current process image with a new process  image.
 - ```find /foo -name bar -print```
+
 **Archiving & compressing** 
 - archiving
 - tar
@@ -263,6 +264,7 @@ XZ Utils
 - .xz
 - unxz / xzcat / xz -d
 - compression format of choice
+
 Tasks
 https://github.com/l-pavlova/OS-in-30-days-/blob/master/tasks2.md
 
