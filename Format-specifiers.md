@@ -1,9 +1,11 @@
 # Format specifiers cheetsheet in linux and c
 
-for printf command in linux
-- %p - path
-- %s -size
-- %f -file
+```printf``` command in linux - defines a magic string in which we say how the stoud will be formatted
+- "%p\n" - path, fullname
+- "%s" -size
+- "%f\n" -file
+- "%t\n" - gives property of file
+- "%@T %p\n" - gives unix time and filename and path
 
 for c:
 - %c - Character format specifier 
