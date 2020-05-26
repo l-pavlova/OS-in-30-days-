@@ -182,7 +182,11 @@ find ./foo -type f -name "*.txt" | xargs rm
 - xz
 
 **Archives with tar**
-
+-```tar
+  -c create arcive
+  -x extract
+  -caf -create Auto format, Files specified
+  ```
 - manipulates .tar files (tarballs)
 - used for backup and transfer of files
 - tar cvf foo.tar ./foo/*
