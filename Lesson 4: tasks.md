@@ -7,14 +7,14 @@ ps:
 
 ```ps -eo pid,cmd,etime | head```
 
+alternatively po start_time:
+
+```ps -e -o pid,cmd --sort=start_time ```
+
 -- 04-a-6000 
 Намерете PID и командата на процеса, който заема най-много виртуална памет в системата.
 
 ```ps -eo pid,cmd,%mem --sort=-%mem|head -n 2```
-
-alternatively po start_time:
-
-```ps -e -o pid,cmd --sort=start_time ```
 
 -- 04-a-6300
  Изведете командата на най-стария процес
@@ -46,17 +46,18 @@ ps -elf | grep "$(ps -eo user |uniq |tail -n 1)"
 
 -- 04-b-7000 
 Намерете колко физическа памет заемат осреднено всички процеси на потребителската група root. Внимавайте, когато групата няма нито един процес.
-(not working)
 -drs==the amount of physical memory
-
-```ps -o drs,cmd |tail -n -3|sort -k1|awk 'BEGIN{counter=0} {if($2=="root")counter+=$1} END{print counter}'```
-трябва и да се раздели на броя
+-rss==memory we need
+```
+ps -g root -o rss |awk 'BEGIN{rows=0;sum=0} {rows+=1;sum+=1}END{print sum/rows}'
+```
 
 -- 04-b-8000
 Намерете всички PID и техните команди (без аргументите), които нямат tty, което ги управлява. Изведете списък само с командите без повторения.
 
+```ps -eo pid,cmd,tty|grep '?$' |uniq```
 
-
+meaning those processess don't have a terminal that's running them and there is a ?, so we select all and grep the ones with ? on tty
 
 -- 04-b-9000
 Да се отпечатат PID на всички процеси, които имат повече деца от родителския си процес.
