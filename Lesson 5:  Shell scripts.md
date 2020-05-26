@@ -1,17 +1,15 @@
 # Shell scripting
 
 **command shell**
-- user-interface
-- access to filesystem
+- user-interface, gives access to filesystem
 - scriptability for task automation
-- program launching
-- process control interface
+- program launching and process control interface
 
 **changing the shell**
-• $SHELL; ps -f  Use the shell name to invoke that shell (dash)
-• /etc/passwd
-• chsh
-• /etc/shells
+- $SHELL; ps -f  Use the shell name to invoke that shell (dash)
+- /etc/passwd
+- chsh
+- /etc/shells
 
 
 sh
