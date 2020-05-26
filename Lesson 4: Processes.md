@@ -29,8 +29,9 @@
 - ``` ps -e``` shows all processes for all users logged in the machine right now
 - ``` ps -ef```shows all process with security process id and parent process id
 - ``` ps -u pesho```
-- ``` ps -e -o user,pid``` -o for output columns
-- ``` ps -u pesho -o pid=process,user=account``` for user pesho 
+- ``` ps -e -o user,pid``` -o for output columns -e selects all processes
+- ``` ps -u pesho -o pid=process,user=account``` selects processes for user, -u 
+-```ps -p 901``` selects process with 901 pid
 - ```ps aux```- shows metadata in unix format
 - ``` ps -u pesho -o pid= -o user=```
 - ``` BSD (aux) vs. SysV (aef)```
