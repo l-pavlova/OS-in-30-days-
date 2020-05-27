@@ -14,3 +14,6 @@ for c:
 - %o - Unsigned Octal number for integer 
 - %s - String printing  
 -  %x, %X - Unsigned Hexadecimal for integer 
+
+
+ctrl+d - end input for commad read
