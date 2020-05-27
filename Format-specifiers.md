@@ -17,3 +17,5 @@ for c:
 
 
 ctrl+d - end input for commad read
+vi:
+v-visual mode, y copies p pastes
