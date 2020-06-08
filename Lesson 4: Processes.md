@@ -59,6 +59,8 @@
 - ```killall <name>``` - sends to all processes from keyboard
 - ```Ctrl-C``` - SIGINT(2)- stops process gently
 - ```Ctrl-Z``` - SIGSTOP(19)-stops not so gently
+- ```who``` - shows who is logged in on the machine
+- ```logout``` - logs out of a terminal
   
 **Job control** 
 - suspend and resume
