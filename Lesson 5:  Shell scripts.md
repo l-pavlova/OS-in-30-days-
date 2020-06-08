@@ -17,7 +17,7 @@
 - /etc/profile
 - ~/.profile
 - ./script.sh -run script 
-- source script.sh
+- source script.sh - bash shell built-in command that executes the content of the file passed as argument, in the current shell. This cmd allows you to use the variables in the script as local shell variables. When using variables inside cmds use ${VAR} notation
 - . script.sh
 
 **bash**
