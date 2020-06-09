@@ -4,8 +4,9 @@
 uid=$1
 while ( true ); do 
 	sleep 1
-	curr=$(who)
-	if [[ $curr -eq $uid ]]; then 
+	match=$(who | grep -o $uid| cut -d " " -f1 | wc -l
+)
+	if [[ $match -ge 1 ]]; then 
 		echo "logged"
 		exit 0
 	fi 	
