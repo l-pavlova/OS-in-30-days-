@@ -29,6 +29,7 @@
 - ~/.bashrc
 - ~/.bash_login
 - ~/.bash_logout
+- dirname - gives parent directory!!
 
 **shell and environment variables**
 - useful in shell scripting
