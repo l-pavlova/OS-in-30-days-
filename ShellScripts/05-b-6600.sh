@@ -5,10 +5,17 @@ if [ $# -ne 1 ]; then
 fi
  
 dir= $1
-for curr in "$dir"/*;
+for curr in "$1"/*;
 	 do
-		echo "$curr"
-		while read p;  do
-			echo checking files
-		done < "$(ls -l -s $dir | cut -d " " -f9)"	 
+		#echo "$curr"
+		for currOther in "$1"/*; do
+			if [[ "$curr" != "$currOther" && -f $curr && -f $currOther ]]; then
+				cmp "$curr" "$currOther" 2>/dev/null
+				if [ $? -eq 0 ]; then
+					rm "$currOther"
+					echo removing $currOther
+				fi
+			fi
+					
+		done  
 done 
