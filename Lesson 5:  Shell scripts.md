@@ -53,7 +53,7 @@
 - ```$ unset FOO; echo $FOO```
 
 **Environment variables**
-- $PATH - executable search path
+- $PATH - executable search path contains a list of directories seperated by :, user can add more 
 - $PWD - path to current working directory
 - $TERM - login terminal type (vt100, xterm)
 - $SHELL - path to login shell (/bin/sh)
@@ -84,6 +84,11 @@
 - test(1)
 - test EXPRESSION
 - [ EXPRESSION ]
+
+
+- RSS - Resident Set Size used to show how much memory is allocated to that process in RAM. It does not include memory that is swapped out. It does include memory from shared libraries as long as the pages from those libraries are actually in memory. It does include all stack and heap memory.
+
+- VSZ is the Virtual Memory Size. It includes all memory that the process can access, including memory that is swapped out, memory that is allocated, but not used, and memory that is from shared libraries.
 
 **exit status**
 - $?
