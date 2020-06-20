@@ -1,0 +1,8 @@
+removed file ./test10/f1
+removed file test10/f1 at
+removed file test10/f2 at
+removed file test10/delete at
+removed file test10/f1 at
+removed file test10/f4 at
+removed file test10/a at Sat 20 Jun 2020 12:14:09 PM EEST
+removed file test10/b at Sat 20 Jun 2020 12:14:09 PM EEST
