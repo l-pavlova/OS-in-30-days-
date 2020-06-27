@@ -10,7 +10,7 @@ if [[ !($NUM == ?(-)+([0-9])) ]]; then
 fi  
 if [[ $(whoami) == "grade" ]]; then
 	echo we in this bitch
-	USERS=$(ps -eo user | sort | uniq)
+	USERS=$ (ps -eo user | sort | uniq)
 	for user in $USERS; do
 		MEMORY=$((ps -u "$user" -eo uid,pid,rss | awk '{s+=$3}END{print s}'))
 		if [[ ($MEMORY == ?+([0-9])) ]]; then

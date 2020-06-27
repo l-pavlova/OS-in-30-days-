@@ -1,0 +1,6 @@
+FOO=73
+BAR=42
+BAZ=
+ENABLED=a b c d
+EXTRA=  e f h
+
