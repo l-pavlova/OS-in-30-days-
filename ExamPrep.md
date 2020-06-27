@@ -15,4 +15,4 @@ without family name check
 
 --11 $ cat ../../passwd | grep /home/SI | cut -d ":" -f5- | cut -d ',' -f4 | find -type f -printf "%T@ %p"
 
---12 pwd $(ls -li | grep $(ls -li | grep grade | ls -li | grep grade | sort -t ' ' -k 8| cut -d " " -f 1 | head -n 1)) | tr '/' ' ' | wc -w
+--12 pwd $(ls -li | grep $(ls -li | grep grade | sort -t ' ' -k8 | cut -d " " -f 1 | head -n 1)) | tr '/' ' ' | wc -w
