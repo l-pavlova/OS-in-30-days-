@@ -1,6 +1,10 @@
 if [ $# -ne 2 ]; then
 	echo wrong args 
-	exit 
+	exit 1 
+fi
+if [ ! -e $1 ]; then
+	echo file "$1" doesnt exist
+	exit 2
 fi
 fcount1=$(grep "$1" "$1" | wc -l)
 echo $fcount1

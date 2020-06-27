@@ -8,6 +8,10 @@ if [[ -f $1 ]]; then
 	echo not a dir
 	exit 2
 fi
+if [[ ! -e $1 ]]; then
+	echo Directory "$1" doesnt exist 
+	exit 3
+fi
 #find all symlinks
 #find the nonexistent dest wit if -e 
 links=$(ls -lR $dir| egrep ">")
