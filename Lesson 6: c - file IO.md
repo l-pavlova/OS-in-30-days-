@@ -27,7 +27,8 @@ flags:
 - O_CREAT - create file if it doesn't exist on opening it
 - O_TRUNC - overwrite the existing content in the file it wasn't empty
 - S_URUSR -give the file user perms for reading, alternatively give them with numbers 00700 all user perms, 00600 - read write, 00400 - read, 00200 - write
-```if( fd1 == -1 ){
+```
+if( fd1 == -1 ){
 err(1, "file couldn't open for reading sry");
 }//always add checks for those
 ```
