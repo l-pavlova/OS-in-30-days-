@@ -20,6 +20,13 @@ int fd1 = open(const char *pathname, int flags);
 int fd1 = open("random.txt", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWRUSR)
 ```
 -open a file descriptor to file random.txt, for reading and writing, create if not existing overrite its content with trunc, and give user perms for reading and writing
+flags:
+- O_RDONLY - open file only for reading
+- O_RDWR - open file for reading and writing
+- O_WRONLY - open file for writing only
+- O_CREAT - create file if it doesn't exist on opening it
+- O_TRUNC - overwrite the existing content in the file it wasn't empty
+- S_URUSR -give the file user perms for reading, alternatively give them with numbers 00700 all user perms, 00600 - read write, 00400 - read, 00200 - write
 ```if( fd1 == -1 ){
 err(1, "file couldn't open for reading sry");
 }//always add checks for those
@@ -30,3 +37,4 @@ err(1, "file couldn't open for reading sry");
 Predefined types with their size in their name
 - u_int32_t
 - u_int64_t
+
