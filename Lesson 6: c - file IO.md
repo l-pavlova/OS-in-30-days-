@@ -15,8 +15,11 @@ the other flags are added for error checks
 ##IO operations##
 
 Establishing connection with file descriptors
-```int fd1 = open(const char *pathname, int flags);
-int fd1 = open("random.txt", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWRUSR)``` -open a file descriptor to file random.txt, for reading and writing, create if not existing overrite its content with trunc, and give user perms for reading and writing
+```
+int fd1 = open(const char *pathname, int flags);
+int fd1 = open("random.txt", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWRUSR)
+```
+-open a file descriptor to file random.txt, for reading and writing, create if not existing overrite its content with trunc, and give user perms for reading and writing
 ```if( fd1 == -1 ){
 err(1, "file couldn't open for reading sry");
 }//always add checks for those
@@ -24,4 +27,6 @@ err(1, "file couldn't open for reading sry");
 
 ```int close(int fd);``` - just close connection with file by passing the file descriptor 
 
-
+Predefined types with their size in their name
+uint32_t
+uint64_t
