@@ -12,7 +12,7 @@ the other flags are added for error checks
 
 - xxd command - shows the contents of a file in a binary format, helps with interpreting what happened during file reading/writing
 
-##IO operations##
+# IO operations #
 
 Establishing connection with file descriptors
 ```
