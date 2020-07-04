@@ -28,5 +28,5 @@ err(1, "file couldn't open for reading sry");
 ```int close(int fd);``` - just close connection with file by passing the file descriptor 
 
 Predefined types with their size in their name
-uint32_t
-uint64_t
+- u_int32_t
+- u_int64_t
