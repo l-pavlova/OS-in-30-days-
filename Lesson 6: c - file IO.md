@@ -37,6 +37,7 @@ err(1, "file couldn't open for reading sry");
 
 ```lseek(fd, 0, SEEK_SET) ``` - set the file descriptor to go to the beginning of a file after using it for sth to go through the file already.
 ```lseek(fd1, -1, SEEK_CUR); ``` - set the fd one position back from the current one
+```SEEK_END - sets to the end of the file```
 
 Predefined types with their size in their name
 - u_int32_t
