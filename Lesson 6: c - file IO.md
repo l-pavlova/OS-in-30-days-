@@ -43,3 +43,23 @@ Predefined types with their size in their name
 - u_int32_t
 - u_int64_t
 
+- stat - system call, displays info about files
+
+### structs ### 
+- like in c++
+```
+struct test {
+  char a;
+  int b;
+}
+int main() {
+  struct test firstStruct;
+  firstStruct.a;
+  firstStruct.b;
+}
+//we can also type def it not to have to write the whole struct thing every time
+typedef struct test {
+  char a;
+  int b;
+} test
+```
