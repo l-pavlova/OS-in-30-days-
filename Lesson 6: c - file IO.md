@@ -40,10 +40,12 @@ err(1, "file couldn't open for reading sry");
 ```SEEK_END - sets to the end of the file```
 
 Predefined types with their size in their name
-- u_int32_t
-- u_int64_t
+- uint16_t -unsigned int from 0 to 32,767
+- uint32_t
+- uint64_t
 
 - stat - system call, displays info about files
+- struct stat - default struct 
 
 ### structs ### 
 - like in c++
