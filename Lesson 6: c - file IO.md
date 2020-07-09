@@ -39,11 +39,22 @@ err(1, "file couldn't open for reading sry");
 ```lseek(fd1, -1, SEEK_CUR); ``` - set the fd one position back from the current one
 ```SEEK_END - sets to the end of the file```
 
+- printf
+- fprintf(File*stream,...), works like err();
+
+- err(int exitcode, string msg) -terminates the program
+- errx(int exitcode, string msg) - for user errs
+- warn(string msg);
+- warnx(string msg);
+- Global var errno - gets set when sth breaks and exits, give info about the error.
+
 Predefined types with their size in their name
-- u_int32_t
-- u_int64_t
+- uint16_t -unsigned int from 0 to 32,767
+- uint32_t
+- uint64_t
 
 - stat - system call, displays info about files
+- struct stat - default struct 
 
 ### structs ### 
 - like in c++
@@ -63,3 +74,12 @@ typedef struct test {
   int b;
 } test
 ```
+### stat ###
+- very useful, gives info about a file passed, 
+stat(filepath, &buff); //where buff is a struct stat type
+it's properties are accessed like :
+- buff.st_mode - file type, those can be checked later with S_ISREG, S_ISDIR (see man 7 inode)
+- buff.st_uid - user id of owner
+- buff.st_size,
+- buff.st_atim - access time,
+- buff.st_nlink -number of hardlinks to the file
