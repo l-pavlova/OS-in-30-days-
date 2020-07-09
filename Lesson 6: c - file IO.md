@@ -74,7 +74,7 @@ typedef struct test {
   int b;
 } test
 ```
-###stat###
+### stat ###
 - very useful, gives info about a file passed, 
 stat(filepath, &buff); //where buff is a struct stat type
 it's properties are accessed like :
