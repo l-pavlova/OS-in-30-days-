@@ -73,6 +73,11 @@ typedef struct test {
   char a;
   int b;
 } test
+
+struct test {
+  char a;
+  int b;
+ } __attribute((packed)) // this attribute makes it so that the fs doesn't put some spacesq it's memory efficient but it's hard for the processor
 ```
 ### stat ###
 - very useful, gives info about a file passed, 
