@@ -13,5 +13,8 @@
 - if a fd is closed in the parent, its children won't inherit it at all.
 - ctrl +d === END OF FILE
 
+- errno - global variable contains error number(obv)
+
+
 
 
