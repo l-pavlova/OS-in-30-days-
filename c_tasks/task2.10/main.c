@@ -12,15 +12,14 @@ int main(int argc, char* argv[]) {
 	int pid=fork();
 	int status;
 	if(pid == 0) {
-		execlp(argv[1], argv[1], (char*)NULL);
+		if(execlp(argv[1], argv[1], (char*)NULL) !=0) {
+			exit(1);
+			//here the check should be completed on the execlp call otherwise status is zero and things dont work
+		}
 	}
 	wait(&status);
-	//todo:fix!!
-	if(status!=0) {
-		exit(42);
-	}
 	if(WIFEXITED(status)) {
-		printf("exit status is : %d\n", status);
+	//	printf("exit status is : %d\n", status);
 		if(WEXITSTATUS(status) == 0) {
 			if(pid > 0) {
 				execlp(argv[2], argv[2], (char*)NULL);
@@ -30,5 +29,5 @@ int main(int argc, char* argv[]) {
 			exit(42);
 		}
 	}
-//	exit(0);
+	exit(0);
 }
