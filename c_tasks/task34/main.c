@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-
+#include <errno.h>
 struct element {
 	uint16_t offset;//start of string
 	uint8_t len; 
@@ -33,14 +33,26 @@ int main(int argc, char* argv[]) {
 	}
 	int f1idx = open(argv[2], O_RDONLY);
 	if(f1idx == -1) {
+		int olderrno = errno;
+		close(f1dat);
+		errno = olderrno;
 		err(3, "couldnt open file %s", argv[2]);
 	}
 	int f2dat = open (argv[3], O_RDWR | O_CREAT | O_TRUNC, 0777);
 	if(f2dat == -1) {
+		int olderrno = errno;
+		close(f1dat);
+		close(f1idx);
+		errno = olderrno;
 		err(4, "couldnt open file %s", argv[3]);
 	}
 	int f2idx = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0777);
 	if(f2idx == -1) {
+		int olderrno = errno;
+		close(f1dat);
+		close(f1idx);
+		close(f2dat);
+		errno = olderrno;
 		err(5, "couldnt open file %s", argv[4]);
 	}
 	struct element el; //we are gonna read those from first file
@@ -52,19 +64,41 @@ int main(int argc, char* argv[]) {
 				lseek(f1dat, el.offset, SEEK_SET);//put the descriptor to the place of the start of the string
 				for(uint8_t i=0; i< el.len; i++) {
 					if(read(f1dat, &c, sizeof(c)) != sizeof(c)) {
+						int olderrno = errno;
+						close(f1dat);
+						close(f1idx);
+						close(f2dat);
+						close(f2idx);				
+						errno = olderrno;
 						err(6, "couldnt read from %s", argv[1]);
 					}
-					if(write(f2dat, &c, sizeof(c)) != sizeof(c)) {
-						err(7, "couldnt write to %s", argv[3]);
+					if (c >= 'A' && c <= 'Z') {
+						if(write(f2dat, &c, sizeof(c)) != sizeof(c)) {
+							int olderrno = errno;
+							close(f1dat);
+							close(f1idx);
+							close(f2dat);
+							close(f2idx);
+ 							errno = olderrno;
+							err(7, "couldnt write to %s", argv[3]);
+						}
 					}
-					
 					//now the new index file
 				}
 				if(write(f2idx, &y, sizeof(y)) != sizeof(y)) {
-					 err(8, "couldnt write to %s", argv[4]);
+					int olderrno = errno;
+					close(f1dat);
+					close(f1idx);
+					close(f2dat);
+					close(f2idx);
+					errno = olderrno;
+					err(8, "couldnt write to %s", argv[4]);
 				}
 			y.offset+=el.len;		
 	}
-			
+	close(f1dat);
+	close(f1idx);
+	close(f2dat);
+	close(f2idx);	
 	exit(0);
 }
