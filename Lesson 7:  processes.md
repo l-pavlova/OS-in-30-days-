@@ -1,4 +1,4 @@
-# Pipes #
+# Processes #
 - Exec - runs the program we tell it to run, replaces the current program with the one we passed but keeps the same environment, the file-descriptors and the general state of the current process are copied in the new one.
 
 Man 3 exec 
