@@ -1,0 +1,3 @@
+Some text to sort with the pipe
+thirds line to see how they get ordered
+another line
